@@ -24,7 +24,7 @@ class MyCameraServeur(IvyServer):
   def __init__(self):
     IvyServer.__init__(self,'CAMERA')
     self.name = 'CAMERA'
-    self.start('127.255.255.255:2010')       
+    self.start('192.168.1.255:2010')       
     self.bind_msg(self.handle_demande_pos, 'DEMANDE POSITION')
 
   def handle_demande_pos(self, agent):

@@ -3,6 +3,7 @@ from picamera.array import PiRGBArray
 from picamera import PiCamera
 import numpy as np
 import time
+import datetime
 import cv2
 
 def show(name, img, x, y):
@@ -30,6 +31,8 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     start  = time.time()
     img    = frame.array # grab an image from the pi camera 
     cpt    = time.time()
+    tscpt  = datetime.datetime.fromtimestamp(cpt) # the timestamp of the capture
+    print(tscpt)
     cptime = cpt - start
     #blu    = cv2.medianBlur(img, 3)
     #blt    = time.time()
